@@ -1,0 +1,255 @@
+<!doctype html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Darmowy kalkulator BMI" />
+    <meta name="keywords" content="BMI, kalkulator, wskaźnik, masy, ciała, body, mass, index" />
+    <title>BMI Kalkulator</title>
+    <!--    Stylesheet Files    -->
+    <link rel="stylesheet" th:href="@{/css/normalize.css}" />
+    <link rel="stylesheet" th:href="@{/css/foundation.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" />
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <!--    Javascript files are placed before </body>    -->
+</head>
+<body>
+<!--  Start Hero Section  -->
+<section class="hero">
+    <header>
+        <div class="row">
+
+            <nav class="top-bar" data-topbar role="navigation">
+                <!--    Start Logo    -->
+                <ul class="title-area">
+                    <li class="name">
+                        <a href="#" class="logo">
+                            <h1>BMI <span class="tld">Kalkulator</span></h1>
+                        </a>
+                    </li>
+                    <li>
+                            <span class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a>
+                            </span>
+                    </li>
+                </ul>
+                <!--    End Logo    -->
+                <!--    Start Navigation Menu    -->
+                <section class="top-bar-section" id="mean_nav">
+                    <ul class="right">
+                        <li><a href="#hero">BMI</a></li>
+                        <li><a href="#jak">Info</a></li>
+                        <li><a href="#kalorie">Kalkulator kalorii</a></li>
+                        <li><a href="#cytaty">Cytaty</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </section>
+                <!--    End Navigation Menu    -->
+            </nav>
+        </div>
+    </header>
+    <div style="text-align: center;" class="row" id="hero">
+        <div class="columns large-6 medium-6 small-12">
+            <div class="grid-x grid-padding-x">
+                <form action="/resultbmi">
+                    <fieldset class="large-7 cell">
+                        <legend>Wybierz płeć</legend>
+                        <input type="radio" id='bmi_gender_m' name="bmi_gender" value="male" checked />
+                        <label for="bmi_gender_m">Mężczyzna</label>
+                        <input type="radio" id='bmi_gender_f' name="bmi_gender" value="female" />
+                        <label for="bmi_gender_f">Kobieta</label>
+                    </fieldset>
+
+                    <input type="number" class="" name="weight" value="" placeholder="waga (kg)" />
+                    <input type="number" class="" name="height" value="" placeholder="wysokość (cm)" />
+                    <button type="submit" class="btn-warning">Oblicz</button>
+                </form>
+            </div>
+        </div>
+        <div class="columns large-6 medium-6 small-12">
+            <aside class="bmi-explanation">
+                <h1>BMI Kalkulator</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </aside>
+        </div>
+    </div>
+</section>
+<!--  End Hero Section  -->
+<!--  Start Services Section  -->
+<section class="services" id="jak">
+    <!--    Start Services Titles    -->
+    <div class="row">
+        <h1 class="mean_title">Zastanawiasz się, czy Twoja waga jest prawidłowa?</h1>
+        <h2 class="sub_title">Kalkulatory BMI i BMR pomogą Ci to samodzielnie sprawdzić</h2>
+    </div>
+    <!--    End Services Titles    -->
+    <!--    Start Services List    -->
+    <div class="row services_list">
+        <div class="small-12 medium-3 large-3 columns">
+            <img th:src="@{/img/icon2.png}" alt="" title="" class="serv_icon" />
+            <h2 class="title">Zdrowie jest ważne</h2>
+            <p>Kalkulator BMI (Body Mass Index) daje każdemu możliwość szybkiego i wygodego obliczenia własnego wskaźnika masy ciała. BMI obliczamy dzieląc masę ciała (w kilogramach) przez wzrost osoby do kwadratu (w metrach).</p>
+        </div>
+
+        <div class="small-12 medium-3 large-3 columns">
+            <img th:src="@{/img/icon1.png}" alt="" title="" class="serv_icon" />
+            <h2 class="title">Uniknij chorób</h2>
+            <p>Wskaźnik ten wykorzystywany jest przede wszystkim do oceny ryzyka pojawienia się groźnych chorób: miażdżycy, choroby niedokrwiennej serca, udaru mózgu, czy nawet nowotworów. Większość tych chorób jest związana z otyłością.</p>
+        </div>
+
+        <div class="small-12 medium-3 large-3 columns">
+            <img th:src="@{/img/icon3.png}" alt="" title="" class="serv_icon" />
+            <h2 class="title">Badaj się</h2>
+            <p>Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Ruis nostrud exercitation ullamco laboris.</p>
+        </div>
+
+        <div class="small-12 medium-3 large-3 columns">
+            <img th:src="@{/img/icon4.png}" alt="" title="" class="serv_icon" />
+            <h2 class="title">Jedz zdrowo</h2>
+            <p>Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Fugiat nulla pariatur exercitation ullamco laboris.</p>
+        </div>
+    </div>
+    <!--    End Services List    -->
+</section>
+<!--  End Services Section  -->
+<!--  Start Quote Section  -->
+<section class="quote" id="kalorie">
+    <div class="row">
+        <div class="columns large-6 medium-6 small-12">
+            <div class="grid-x grid-padding-x">
+                <form action="/resultcalories">
+
+                    <fieldset class="large-7 cell">
+                        <legend>Wybierz płeć</legend>
+                        <input type="radio" id='bmr_gender_m' name="bmr_gender" value="male" checked>
+                        <label for="bmr_gender_m">Mężczyzna</label>
+                        <input type="radio" id='bmr_gender_f' name="bmr_gender" value="female">
+                        <label for="bmr_gender_f">Kobieta</label>
+                    </fieldset>
+
+                    <input type="number" class="" name="age" value="" placeholder="wiek">
+                    <input type="number" class="" name="weight" value="" placeholder="waga (kg)">
+                    <input type="number" class="" name="height" value="" placeholder="wysokość (cm)">
+
+                    <select class="" name="activity">
+                        <option value="0">Brak aktywności fizycznej</option>
+                        <option value="1">Niska aktywność fizyczna (jeden trening tygodniowo)</option>
+                        <option value="2">Średnia aktyność fizyczna (dwa treningi tygodniowo)</option>
+                        <option value="3">Duża aktywność fizyczna (trzy treningi tygodniowo)</option>
+                        <option value="4">Bardzo duża aktywność fizyczna</option>
+                        <option value="5">Sport wyczynowy</option>
+                    </select>
+                    <button type="submit" class="btn-warning">Oblicz</button>
+                </form>
+            </div>
+        </div>
+        <div class="columns large-6 medium-6 small-12">
+            <aside class="bmi-explanation">
+                <h1>BMR Kalkulator</h1>
+                <p>Kalkulator kalorii sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </aside>
+        </div>
+    </div>
+</section>
+<!--  End Quote Section  -->
+<!--  Start Testimonials Section  -->
+<section class="testimonials" id="cytaty">
+    <!--id is for navigation-->
+    <div class="row">
+        <div class="slider_container">
+            <div id="carousel">
+
+                <div class="tesimonial">
+                    <img th:src="@{/img/edward bulwer lytton.jpg}" title="" alt="">
+                    <span class="name">Edward Bulwer-Lytton</span>
+                    <p>Nie zgadzaj się na to, że jesteś chory. Nigdy nie mów ludziom, że jesteś chory. Nigdy do tego nie przyznawaj się sam sobie. Choroba jest jedną z tych rzeczy, którym od początku trzeba się z zasady przeciwstawiać.</p>
+                    <span class="author">Cytaty zdrowotne</span>
+                </div>
+
+                <div class="tesimonial">
+                    <img th:src="@{/img/julian aleksandrowicz.jpg}" title="" alt="">
+                    <span class="name">Julian Aleksandrowicz</span>
+                    <p>Nie ma nieuleczalnie chorych. Poznałem siłę nadziei i destrukcyjną moc rozpaczy. Zalecam trwanie przy nadziei, nigdy bowiem nie wiadomo, w której chwili i skąd może przyjść ocalenie.</p>
+                    <span class="author">Cytaty zdrowotne</span>
+                </div>
+
+                <div class="tesimonial">
+                    <img th:src="@{/img/leonardo da vinci.jpg}" title="" alt="">
+                    <span class="name">Leonardo da Vinci</span>
+                    <p>Doktorzy, którzy zajmują się chorymi, powinni koniecznie zrozumieć, czym jest człowiek, czym jest życie i czym jest zdrowie, i w jaki sposób równowaga i harmonia tych elementów je podtrzymuje.</p>
+                    <span class="author">Cytaty zdrowotne</span>
+                </div>
+
+            </div>
+        </div>
+        <!--    Start Testimonials Pagination    -->
+        <nav class="pagination">
+            <ul>
+                <li><a href="#">1</a></li>
+                <li><a href="#" class="selected">2</a></li>
+                <li><a href="#">3</a></li>
+            </ul>
+        </nav>
+        <!--    End Testimonials Pagination    -->
+    </div>
+</section>
+<!--  End Testimonials Section  -->
+<!--  Start Call To Action Section  -->
+<section class="cta" id="Download">
+    <div class="row">
+        <!--    Start CTA Titles    -->
+        <h1 class="title">Polecamy nasze kompleksowe usługi na terenie całego kraju</h1>
+        <h2 class="sub_title">Nasi konsultanci są dostępni 24 godziny na dobę</h2>
+        <!--    End CTA Titles    -->
+        <!--    Start Button    -->
+        <a href="#" class="btn_fancy">
+            <div class="solid_layer"></div>
+            <div class="border_layer"></div>
+            <div class="text_layer">Zamów już teraz!</div>
+        </a>
+        <!--    End Button    -->
+
+    </div>
+</section>
+<!--  End Call To Action Section  -->
+<!--  Start Footer Section  -->
+<footer>
+    <div class="row" id="kontakt">
+
+        <!--    Start Copyrights    -->
+        <div class="small-12 medium-4 large-4 columns">
+            <div class="copyrights">
+                <a class="logo" href="#">
+                    <h1>BMI <span class="tld"> Kalkulator</span></h1>
+                </a>
+                <p>Copyright © 20018-2019 <a href="http://www.dekonstruktor.com" target="_blank">yacobi</a></p>
+            </div>
+        </div>
+        <!--    End Copyrights    -->
+</div>
+</footer>
+<!--  End Footer Section  -->
+
+<!--    Start Back To Top    -->
+<a href="#" class="btn_fancy" id="back_top">
+    <div class="solid_layer"></div>
+    <div class="border_layer"></div>
+    <div class="text_layer"><img th:src="@{/img/top_arrow.png}" alt="Back to top" title="" class="top_arrow"></div>
+</a>
+<!--    End Back To Top    -->
+
+<!--    Javascript Files    -->
+<script th:src="@{/js/jquery.js}"></script>
+<script th:src="@{/js/touchSwipe.min.js}"></script>
+<script th:src="@{/js/easing.js}"></script>
+<script th:src="@{/js/foundation.min.js}"></script>
+<script th:src="@{/js/foundation/foundation.topbar.js}"></script>
+<script th:src="@{/js/carouFredSel.js}"></script>
+<script th:src="@{/js/scrollTo.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+
+
+
+</body>
+
+</html>
